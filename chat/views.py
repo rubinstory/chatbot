@@ -8,8 +8,8 @@ import json
 def keyboard(request):
     
     return JsonResponse({
-                        'type':'buttons',
-                        'buttons':['Today','Tomorrow']
+                            'type':'buttons',
+                            'buttons':['Today','Tomorrow']
                         })
 
 @csrf_exempt
@@ -23,27 +23,27 @@ def answer(request):
         today = "Today's Meal"
         
         return JsonResponse({
-                            'message': {
-                            'text': today
-                            },
-                            'keyboard': {
-                            'type':'buttons',
-                            'buttons':['Today','Tomorrow']
-                            }
-                            
+                                'message': {
+                                    'text': today
+                                },
+                                'keyboard': {
+                                    'type':'buttons',
+                                    'buttons':['Today','Tomorrow']
+                                }
+
                             })
     
     elif datacontent == 'Tomorrow':
         tomorrow = "Tomorrow's Meal"
         
         return JsonResponse({
-                            'message': {
-                            'text': tomorrow
-                            },
-                            'keyboard': {
-                            'type':'buttons',
-                            'buttons':['Today','Tomorrow']
-                            }
+                                'message': {
+                                    'text': tomorrow
+                                },
+                                'keyboard': {
+                                    'type':'buttons',
+                                    'buttons':['Today','Tomorrow']
+                                }
                             
                             })
 
