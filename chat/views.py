@@ -4,6 +4,8 @@ from django.http import JsonResponse
 import json
 
 
+def index(request):
+    return HttpResponse("This is Beta Bot.")
 
 def keyboard(request):
     
