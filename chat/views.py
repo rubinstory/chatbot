@@ -32,38 +32,38 @@ def message(request):
     elif num == 2:
         choose = '보'
 
-    result = "당신의 수 : {}\n 컴퓨터의 수 : {}\n".format(datacontent,choose)
+    result = "당신의 수 : {}\n컴퓨터의 수 : {}\n".format(datacontent,choose)
 
     if datacontent == '가위':
         if choose == '가위':
-            result += '비겼습니다.'
+            result += '사용자와 컴퓨터가 비겼습니다.'
 
         elif choose == '바위':
-            result += '졌습니다.'
+            result += '컴퓨터가 이겼습니다.'
 
         elif choose == '보':
-            result += '이겼습니다.'
+            result += '사용자가 이겼습니다.'
 
 
     elif datacontent == '바위':
         if choose == '바위':
-            result += '비겼습니다.'
+            result += '사용자와 컴퓨터가 비겼습니다.'
 
         elif choose == '보':
-            result += '졌습니다.'
+            result += '컴퓨터가 이겼습니다.'
 
         elif choose == '가위':
-            result += '이겼습니다.'
+            result += '사용자가 이겼습니다.'
 
     elif datacontent == '보':
         if choose == '보':
-            result += '비겼습니다.'
+            result += '사용자와 컴퓨터가 비겼습니다.'
 
         elif choose == '가위':
-            result += '졌습니다.'
+            result += '컴퓨터가 이겼습니다.'
 
         elif choose == '바위':
-            result += '이겼습니다.'
+            result += '사용자가 이겼습니다.'
 
     return JsonResponse({
                             'message': {
