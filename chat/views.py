@@ -23,13 +23,13 @@ def message(request):
     received_json_data = json.loads(json_str)
     datacontent = received_json_data['content']
     
-    num = int(rand.random() * 100) % 29 + 1
+    num = int(rand.random() * 100) % 30 + 1
 
-    if (num >= 1) && (num <= 10):
+    if ((num >= 1) && (num <= 10)):
         choose = '가위'
-    elif (num >= 11) && (num <= 20):
+    elif ((num >= 11) && (num <= 20)):
         choose = '바위'
-    elif (num >= 21) && (num <= 30):
+    elif ((num >= 21) && (num <= 30)):
         choose = '보'
 
     result = "당신의 수 : {}\n컴퓨터의 수 : {}\n".format(datacontent,choose)
