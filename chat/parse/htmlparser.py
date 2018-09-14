@@ -11,7 +11,7 @@ display.start()
 percent = []
 name = []
 lib_dict = dict()
-brower = webdriver.Firefox('/Users/LeeJunYoung/kakao/phantomjs/bin/phantomjs')
+brower = webdriver.Firefox()
 # Chrome driver사용  webdrvier.Chrome('Chromedriver의 절대경로') 맥 윈도우 리눅스 각각 다르므로 다운받아야함 맥 리눅스의 경우 .exe를 빼면 됨
 url = 'https://lib.pusan.ac.kr/'
 brower.get(url)
