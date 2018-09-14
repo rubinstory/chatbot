@@ -8,7 +8,7 @@ try:
     # we can now start Firefox and it will run inside the virtual display
     browser = webdriver.Firefox()
     browser.get('http://www.google.com')
-    print browser.title #this should print "Google"
+    print (browser.title) #this should print "Google"
 
 finally:
     #tidy-up
