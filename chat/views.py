@@ -58,12 +58,12 @@ def message(request):
             index = 0
             team_num = row[index].value
             index += 1
-            while index <= (len(row) - 1):
+            while index < len(row):
                 list_name = row[index].value
                 if list_name == entered_name:
                     response = 'bb'
                     wb.close()
-                        return JsonResponse({
+                    return JsonResponse({
                         'message': {
                         'text': response
                         },
