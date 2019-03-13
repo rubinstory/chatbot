@@ -46,7 +46,6 @@ def message(request):
         response = doorlock_password
     
     else: #이름이 입력된 경우
-        entered_name = datacontent
 
         # 엑셀파일 열기
         wb = openpyxl.load_workbook('list.xlsx')
@@ -60,7 +59,7 @@ def message(request):
             index += 1
             while index < len(row):
                 list_name = row[index].value
-                if list_name == entered_name:
+                if list_name == datacontent:
                     response = 'bb'
                     wb.close()
                     return JsonResponse({
