@@ -28,7 +28,7 @@ def message(request):
     result = 'nothing'
     
     if datacontent == '청소조 확인':
-    
+        result = 'temp'
     elif datacontent == 'FTP서버 비밀번호 확인':
         result = ftp_password
     else:
