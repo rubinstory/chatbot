@@ -25,26 +25,39 @@ def message(request):
     received_json_data = json.loads(json_str)
     datacontent = received_json_data['content']
     
-    result = 'nothing'
+    response = 'nothing'
     
     if datacontent == '청소조 확인':
-        result = 'temp'
+        response = '이름을 입력하세요.'
+
+        return JsonResponse({
+                        'message': {
+                        'text': response
+                        },
+                        'keyboard': {
+                        'type':'text'
+                        }
+                        })
+
     elif datacontent == 'FTP서버 비밀번호 확인':
-        result = ftp_password
-    else:
-        result = doorlock_password
+        response = ftp_password
+    
+    elif datacontent == '동방 비밀번호 확인':
+        response = doorlock_password
+    
+    else: #이름이 입력된 경우
+        entered_name = datacontent
     
     
     
     return JsonResponse({
                         'message': {
-                        'text': result
+                        'text': response
                         },
                         'keyboard': {
                         'type':'buttons',
                         'buttons':['청소조 확인', 'FTP서버 비밀번호 확인', '동방 비밀번호 확인']
                         }
-                        
                         })
 
 
