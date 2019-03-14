@@ -8,8 +8,11 @@ sys.path.append('/usr/local/lib/python3.6/dist-packages')
 import openpyxl
 from datetime import date
 
-ftp_password = 'wnff.6308.2'
-doorlock_password = '1234'
+temp = open('ftp_password.txt', 'r')
+ftp_password = temp.readline()
+
+temp = open('doorlock_password.txt', 'r')
+doorlock_password = temp.readline()
 
 def index(request):
     return HttpResponse("This is Beta Bot.")
@@ -17,9 +20,6 @@ def index(request):
 def keyboard(request):
     
     return JsonResponse({
-                        'message': {
-                        'text': 'hello, world!'
-                        },
                         'type':'buttons',
                         'buttons':['청소조 확인', 'FTP서버 비밀번호 확인', '동방 비밀번호 확인']
                         })
