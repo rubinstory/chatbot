@@ -70,11 +70,11 @@ def message(request):
                     schedule_file = openpyxl.load_workbook('/home/rubinstory1/chatbot/chat/schedule.xlsx')
                     wt = schedule_file.active
                     for irow in wt.rows:
-                        time = str(irow[0])[0:10]
-                        day = irow[1]
+                        time = str(irow[0].value)[0:10]
+                        day = irow[1].value
                         cleaner = ""
                         if day not in weekend:
-                            cleaner = irow[2]
+                            cleaner = irow[2].value
 
                         if team_num == cleaner:
                             response += "\n다음 청소 날짜는 {}입니다.".format(time)
