@@ -50,7 +50,7 @@ def message(request):
     else: #이름이 입력된 경우
 
         # 엑셀파일 열기
-        wb = openpyxl.load_workbook('list.xlsx')
+        wb = openpyxl.load_workbook('./list.xlsx')
 
         # 현재 Active Sheet 얻기
         ws = wb.active
