@@ -17,6 +17,9 @@ def index(request):
 def keyboard(request):
     
     return JsonResponse({
+                        'message': {
+                        'text': 'hello, world!'
+                        },
                         'type':'buttons',
                         'buttons':['청소조 확인', 'FTP서버 비밀번호 확인', '동방 비밀번호 확인']
                         })
