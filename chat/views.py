@@ -6,6 +6,7 @@ import json
 import sys
 sys.path.append('/usr/local/lib/python3.6/dist-packages')
 import openpyxl
+from datetime import date
 
 ftp_password = 'wnff.6308.2'
 doorlock_password = '1234'
@@ -50,10 +51,10 @@ def message(request):
     else: #이름이 입력된 경우
 
         # 엑셀파일 열기
-        wb = openpyxl.load_workbook('/home/rubinstory1/chatbot/chat/list.xlsx')
+        list_file = openpyxl.load_workbook('/home/rubinstory1/chatbot/chat/list.xlsx')
 
         # 현재 Active Sheet 얻기
-        ws = wb.active
+        ws = list_file.active
  
         for row in ws.rows:
             index = 0
@@ -63,7 +64,21 @@ def message(request):
                 list_name = row[index].value
                 if list_name == datacontent:
                     response = "{}님의 청소조는 {}조 입니다.".format(datacontent,team_num)
-                    wb.close()
+
+                    today = date.today()
+                    weekend = ['토요일', '일요일']
+                    wt = openpyxl.load_workbook('/home/rubinstory1/chatbot/chat/schedule.xlsx')
+                    for irow in wt.rows:
+                        time = str(irow[0])[0:10]
+                        day = irow[1]
+                        cleaner = ""
+                        if day not in weekend:
+                            cleaner = irow[2]
+
+                        if team_num == cleaner:
+                            response += "\n다음 청소 날짜는 {}입니다.".format(time)
+                    
+                    list_file.close()
                     return JsonResponse({
                         'message': {
                         'text': response
@@ -77,7 +92,7 @@ def message(request):
                     response = "{}님은 청소조 명단에 없습니다.\n회장단에게 문의해주세요.".format(datacontent,team_num)
                     index += 1
 
-        wb.close()
+        list_file.close()
     
     
     
