@@ -62,7 +62,7 @@ def message(request):
             while index < len(row):
                 list_name = row[index].value
                 if list_name == datacontent:
-                    response = 'bb'
+                    response = "{}님의 청소조는 {}조 입니다.".format(datacontent,team_num)
                     wb.close()
                     return JsonResponse({
                         'message': {
@@ -74,6 +74,7 @@ def message(request):
                         }
                         })
                 else:
+                    response = "{}님은 청소조 명단에 없습니다.\n회장단에게 문의해주세요.".format(datacontent,team_num)
                     index += 1
 
         wb.close()
