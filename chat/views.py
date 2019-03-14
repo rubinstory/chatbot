@@ -63,7 +63,7 @@ def message(request):
             while index < len(row):
                 list_name = row[index].value
                 if list_name == datacontent:
-                    response = "{}님의 청소조는 {}조 입니다.".format(datacontent,team_num)
+                    response = "\"{}\"님의 청소조는 {}조 입니다.".format(datacontent,team_num)
 
                     today = str(date.today())
                     weekend = ['토요일', '일요일']
@@ -76,6 +76,8 @@ def message(request):
                             cleaner = (irow[2].value)[0]
                             if str(team_num) == cleaner:
                                 response += "\n다음 청소 날짜는 {}, {}입니다.".format(time, day)
+                                if (time == today):
+                                    respose += "\n오늘이네요! 꼭 청소하러 와주세요!"
                                 schedule_file.close()
                                 list_file.close()
                                 return JsonResponse({
