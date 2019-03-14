@@ -77,7 +77,7 @@ def message(request):
                             if str(team_num) == cleaner:
                                 response += "\n다음 청소 날짜는 {}, {}입니다.".format(time, day)
                                 if (time == today):
-                                    respose += "\n오늘이네요! 꼭 청소하러 와주세요!"
+                                    response += "\n오늘이네요! 꼭 청소하러 와주세요!"
                                 schedule_file.close()
                                 list_file.close()
                                 return JsonResponse({
