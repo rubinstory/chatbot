@@ -80,6 +80,7 @@ def message(request):
                             response += "\n다음 청소 날짜는 {}입니다.".format(time)
                     
                     list_file.close()
+                    schedule_file.close()
                     return JsonResponse({
                         'message': {
                         'text': response
