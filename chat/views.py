@@ -72,7 +72,6 @@ def message(request):
                     for irow in wt.rows:
                         time = str(irow[0].value)[0:10]
                         day = irow[1].value
-                        cleaner = ""
                         if day not in weekend and time >= today:
                             cleaner = (irow[2].value)[0]
                             if team_num == cleaner:
