@@ -65,7 +65,7 @@ def message(request):
                 if list_name == datacontent:
                     response = "{}님의 청소조는 {}조 입니다.".format(datacontent,team_num)
 
-                    today = date.today()
+                    today = str(date.today())
                     weekend = ['토요일', '일요일']
                     schedule_file = openpyxl.load_workbook('/home/rubinstory1/chatbot/chat/schedule.xlsx')
                     wt = schedule_file.active
