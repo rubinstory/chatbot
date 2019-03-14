@@ -78,7 +78,7 @@ def message(request):
                         if day not in weekend and time >= today:
                             cleaner = (irow[2].value)[0]
                             if str(team_num) == cleaner:
-                                response += "\n다음 청소 날짜는 {}, {}입니다.".format(time, day)
+                                response += "\n다음 청소 날짜는 \n{}, {}입니다.".format(time, day)
                                 if (time == today):
                                     response += "\n오늘이네요! 꼭 청소하러 와주세요!"
                                 schedule_file.close()
