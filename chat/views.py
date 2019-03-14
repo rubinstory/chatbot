@@ -73,10 +73,10 @@ def message(request):
                         time = str(irow[0].value)[0:10]
                         day = irow[1].value
                         cleaner = ""
-                        if day not in weekend and day >= today:
+                        if day not in weekend and time >= today:
                             cleaner = (irow[2].value)[0]
                             if team_num == cleaner:
-                                response += "\n다음 청소 날짜는 {}입니다.".format(time)
+                                response += "\n다음 청소 날짜는 {}, {}입니다.".format(time, day)
                                 list_file.close()
                                 schedule_file.close()
                                 return JsonResponse({
