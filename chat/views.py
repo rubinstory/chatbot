@@ -80,7 +80,7 @@ def message(request):
                                 list_file.close()
                                 return JsonResponse({
                                     'message': {
-                                    'text': response + "2"
+                                    'text': response
                                     },
                                     'keyboard': {
                                     'type':'buttons',
