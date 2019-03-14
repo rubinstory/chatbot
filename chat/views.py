@@ -74,7 +74,7 @@ def message(request):
                         day = irow[1].value
                         cleaner = ""
                         if day not in weekend:
-                            cleaner = irow[2].value
+                            cleaner = (irow[2].value)[0]
 
                         if team_num == cleaner:
                             response += "\n다음 청소 날짜는 {}입니다.".format(time)
