@@ -8,10 +8,10 @@ sys.path.append('/usr/local/lib/python3.6/dist-packages')
 import openpyxl
 from datetime import date
 
-temp = open('ftp_password.txt', 'r')
+temp = open('/home/rubinstory1/chatbot/chat/ftp_password.txt', 'r')
 ftp_password = temp.readline()
 
-temp = open('doorlock_password.txt', 'r')
+temp = open('/home/rubinstory1/chatbot/chat/doorlock_password.txt', 'r')
 doorlock_password = temp.readline()
 
 def index(request):
