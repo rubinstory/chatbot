@@ -67,7 +67,8 @@ def message(request):
 
                     today = date.today()
                     weekend = ['토요일', '일요일']
-                    wt = openpyxl.load_workbook('/home/rubinstory1/chatbot/chat/schedule.xlsx')
+                    schedule_file = openpyxl.load_workbook('/home/rubinstory1/chatbot/chat/schedule.xlsx')
+                    wt = schedule_file.active
                     for irow in wt.rows:
                         time = str(irow[0])[0:10]
                         day = irow[1]
