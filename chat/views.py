@@ -76,21 +76,21 @@ def message(request):
                             cleaner = (irow[2].value)[0]
                             if team_num == cleaner:
                                 response += "\n다음 청소 날짜는 {}, {}입니다.".format(time, day)
-                                list_file.close()
                                 schedule_file.close()
+                                list_file.close()
                                 return JsonResponse({
-                                'message': {
-                                'text': response
-                                },
-                                'keyboard': {
-                                'type':'buttons',
-                                'buttons':['청소조 확인', 'FTP서버 비밀번호 확인', '동방 비밀번호 확인']
-                                }
+                                    'message': {
+                                    'text': response + "ㅇㄴㄹㄴㄹㅇㄴ"
+                                    },
+                                    'keyboard': {
+                                    'type':'buttons',
+                                    'buttons':['청소조 확인', 'FTP서버 비밀번호 확인', '동방 비밀번호 확인']
+                                    }
                                 })
                                 
                     
-                    list_file.close()
                     schedule_file.close()
+                    list_file.close()
                     return JsonResponse({
                         'message': {
                         'text': response
