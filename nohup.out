@@ -1,0 +1,23 @@
+[15/Mar/2019 22:50:44] "GET /keyboard HTTP/1.1" 301 0
+[15/Mar/2019 22:50:44] "GET /keyboard/ HTTP/1.1" 200 239
+[15/Mar/2019 22:50:45] "POST /message HTTP/1.1" 200 421
+[15/Mar/2019 22:50:47] "POST /message HTTP/1.1" 200 539
+[15/Mar/2019 22:55:02] "POST /message HTTP/1.1" 200 421
+[15/Mar/2019 22:55:04] "POST /message HTTP/1.1" 200 539
+[15/Mar/2019 23:26:14] "GET /keyboard HTTP/1.1" 301 0
+[15/Mar/2019 23:26:14] "GET /keyboard/ HTTP/1.1" 200 239
+[15/Mar/2019 23:26:15] "POST /message HTTP/1.1" 200 105
+[15/Mar/2019 23:26:18] "POST /message HTTP/1.1" 200 554
+Not Found: /chat_room/IV8mDUVQDwLo
+[15/Mar/2019 23:26:46] "DELETE /chat_room/IV8mDUVQDwLo HTTP/1.1" 404 2334
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 15, 2019 - 22:50:15
+Django version 2.0.6, using settings 'mybot.settings'
+Starting development server at http://192.168.219.102:8000/
+Quit the server with CONTROL-C.
+Fatal Python error: Py_Initialize: can't initialize sys standard streams
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00007fff6b2cc5c0 (most recent call first):
